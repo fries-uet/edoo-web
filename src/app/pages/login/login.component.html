@@ -1,3 +1,28 @@
-<p>
-  login works!
-</p>
+<div class="container sign-in-wrapper">
+    <div class="sign-in-box">
+        <div class="modal-header">
+            <h4 class="modal-title">Đăng Nhập</h4>
+        </div>
+        <div class="modal-body">
+            <form id="loginForm" (submit)="submit()">
+                <div class="form-group">
+                    <input type="email" class="form-control user_input" name="email" [(ngModel)]="user.email"
+                           placeholder="Email">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control user_input" name="password" [(ngModel)]="user.password"
+                           placeholder="Mật khẩu">
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary login-button ed-button" type="submit">Đăng
+                        Nhập
+                    </button>
+                    <label class="checkbox-inline"><input type="checkbox" value="">Nhớ mật khẩu</label>
+                    <a class="forget-password">Bạn quên mật khẩu?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

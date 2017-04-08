@@ -4,12 +4,15 @@ import {PagesLayoutMasterComponent} from './pages-layout-master/pages-layout-mas
 import {LoginComponent} from './login/login.component';
 import {SharedModule} from "../shared/shared.module";
 import {PagesRoutingModule} from "./pages.routing";
+import {FormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
     imports: [
         CommonModule,
         SharedModule,
-        PagesRoutingModule
+        PagesRoutingModule,
+        FormsModule
     ],
     declarations: [
         LoginComponent
