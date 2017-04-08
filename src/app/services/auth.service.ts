@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {StorageService} from "./storage.service";
 import {Router} from "@angular/router";
 import {Subject} from "rxjs";
+import {EventService} from "./event.service";
 
 @Injectable()
 export class AuthService {
@@ -12,6 +13,7 @@ export class AuthService {
     public onLogin = this.$login.asObservable();
 
     constructor(private storageSrv: StorageService,
+                private eventSrv: EventService,
                 private router: Router) {
         this.onInvalidToken
             .subscribe(
@@ -20,25 +22,25 @@ export class AuthService {
                 }
             );
 
-        this.onLogin
+        this.eventSrv.on('login_success')
             .subscribe(
                 data => {
-                    this.storageSrv.set('profile', data.profile);
-                    this.storageSrv.set('token', data.token);
-
-                    if (data.business) {
-                        this.storageSrv.set('business', data.business);
-                    }
-
-                    let redirectUrl = '/a/campaigns';
-                    if (this.storageSrv.get('returnUrl')) {
-                        redirectUrl = this.storageSrv.get('returnUrl');
-                    }
-
-                    this.redirectTo(redirectUrl);
-                    this.storageSrv.set('returnUrl', false);
+                    this.onLoginSuccess(data);
                 }
             );
+    }
+
+    private onLoginSuccess(data: any) {
+        this.storageSrv.setCurrentUser(data.user);
+        this.storageSrv.setToken(data.token);
+
+        let redirectUrl = '/';
+        if (this.storageSrv.get('returnUrl')) {
+            redirectUrl = this.storageSrv.get('returnUrl');
+        }
+
+        this.redirectTo(redirectUrl);
+        this.storageSrv.set('returnUrl', false);
     }
 
     reLogin() {

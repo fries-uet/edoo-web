@@ -11,6 +11,7 @@ import {StorageService} from "./services/storage.service";
 import {ApiService} from "./services/api.service";
 import {AuthService} from "./services/auth.service";
 import {AuthGuardService} from "./services/auth-guard.service";
+import {EventService} from "./services/event.service";
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import {AuthGuardService} from "./services/auth-guard.service";
         AppRoutingModule,
     ],
     providers: [
+        EventService,
         StorageService,
         ApiService,
         AuthService,

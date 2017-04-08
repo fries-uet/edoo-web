@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
+import {EventService} from "../../services/event.service";
 
 @Component({
     selector: 'edoo-login',
@@ -8,26 +9,43 @@ import {UserService} from "../../services/user.service";
     providers: [UserService]
 })
 export class LoginComponent implements OnInit {
-    private user: any = {
+    public user: any = {
         email: '',
         password: ''
     };
 
-    constructor(private userSrv: UserService) {
+    public isDisabled = false;
+
+    constructor(private userSrv: UserService,
+                private eventSrv: EventService) {
     }
 
     ngOnInit() {
     }
 
     submit() {
-        console.log(this.user);
+        this.isDisabled = true;
 
         this.userSrv.login(this.user.email, this.user.password)
             .subscribe(
-                data => {
-                    console.log(data);
+                (response: any) => {
+                    this.eventSrv.emit('login_success', response.data);
+                },
+                error => {
+                    this.resetAll();
+                },
+                () => {
+                    this.resetAll();
                 }
             );
     }
+
+    private resetAll() {
+        this.user = {
+            email: '',
+            password: ''
+        }
+    }
+
 
 }
