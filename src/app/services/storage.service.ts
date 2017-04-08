@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {EdUser} from "../definitions/ed-user";
 
 @Injectable()
 export class StorageService {
@@ -45,11 +46,11 @@ export class StorageService {
         this.setData(false);
     }
 
-    getCurrentUser() {
+    getCurrentUser(): EdUser {
         return this.get('profile') || false;
     }
 
-    setCurrentUser(user: any): void {
+    setCurrentUser(user: EdUser): void {
         this.set('profile', user);
     }
 
