@@ -7,6 +7,10 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app.routing";
 import {PagesLayoutMasterComponent} from "./pages/pages-layout-master/pages-layout-master.component";
 import {SharedModule} from "./shared/shared.module";
+import {StorageService} from "./services/storage.service";
+import {ApiService} from "./services/api.service";
+import {AuthService} from "./services/auth.service";
+import {AuthGuardService} from "./services/auth-guard.service";
 
 @NgModule({
     declarations: [
@@ -20,7 +24,12 @@ import {SharedModule} from "./shared/shared.module";
         SharedModule,
         AppRoutingModule
     ],
-    providers: [],
+    providers: [
+        StorageService,
+        ApiService,
+        AuthService,
+        AuthGuardService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
