@@ -8,14 +8,18 @@ export class StorageService {
     constructor() {
     }
 
+    private getKeyStorage(key: string) {
+        return this.namespace + ':' + key;
+    }
+
     public set(key: string, value: any) {
-        let k = this.namespace + ':' + key;
+        let k = this.getKeyStorage(key);
 
         localStorage.setItem(k, JSON.stringify(value));
     }
 
     public get(key: string, default_?: any) {
-        let k = this.namespace + ':' + key;
+        let k = this.getKeyStorage(key);
 
         try {
             return JSON.parse(localStorage.getItem(k)) || default_;
@@ -34,10 +38,10 @@ export class StorageService {
     }
 
     getCurrentUser(): EdUser {
-        return this.get('profile') || false;
+        return this.get('user') || false;
     }
 
     setCurrentUser(user: EdUser): void {
-        this.set('profile', user);
+        this.set('user', user);
     }
 }
