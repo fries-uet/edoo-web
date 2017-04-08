@@ -4,6 +4,7 @@ import {AuthService} from "./auth.service";
 import {StorageService} from "./storage.service";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
+import {NgProgressService} from "ng2-progressbar";
 
 @Injectable()
 export class ApiService {
@@ -12,6 +13,7 @@ export class ApiService {
 
     constructor(private http: Http,
                 private authSrv: AuthService,
+                private progressService: NgProgressService,
                 private storageSrv: StorageService) {
         this.BASE_URL = environment.api;
     }
@@ -50,6 +52,7 @@ export class ApiService {
             )
             .share();
 
+        this.subscribeToRunProgressBar(request);
         this.subscribeInvalidToken(request);
 
         return request;
@@ -64,6 +67,20 @@ export class ApiService {
                     if (error.status && error.status == 401) {
                         this.authSrv.$invalidToken.next();
                     }
+                }
+            );
+    }
+
+    private subscribeToRunProgressBar(request: Observable<any>) {
+        this.progressService.start();
+
+        request
+            .subscribe(
+                () => {
+                    this.progressService.done();
+                },
+                () => {
+                    this.progressService.done();
                 }
             );
     }

@@ -12,6 +12,7 @@ import {ApiService} from "./services/api.service";
 import {AuthService} from "./services/auth.service";
 import {AuthGuardService} from "./services/auth-guard.service";
 import {EventService} from "./services/event.service";
+import {NgProgressModule} from "ng2-progressbar";
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import {EventService} from "./services/event.service";
         HttpModule,
         SharedModule,
         AppRoutingModule,
+        NgProgressModule,
     ],
     providers: [
         EventService,
