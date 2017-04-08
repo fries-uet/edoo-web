@@ -8,30 +8,21 @@ export class StorageService {
     constructor() {
     }
 
-    private setData(data): void {
-        localStorage.setItem(this.namespace, JSON.stringify(data));
-    }
-
-    private getData(): any {
-        try {
-            return JSON.parse(localStorage.getItem(this.namespace)) || {};
-        }
-        catch (e) {
-            return {};
-        }
-    }
-
     public set(key: string, value: any) {
-        let data = this.getData();
-        data[key] = value;
+        let k = this.namespace + ':' + key;
 
-        this.setData(data);
+        localStorage.setItem(k, JSON.stringify(value));
     }
 
     public get(key: string, default_?: any) {
-        let data = this.getData();
+        let k = this.namespace + ':' + key;
 
-        return data[key] || default_;
+        try {
+            return JSON.parse(localStorage.getItem(k)) || default_;
+        }
+        catch (e) {
+            return default_;
+        }
     }
 
     setToken(token: any): void {
@@ -42,10 +33,6 @@ export class StorageService {
         return this.get('token');
     }
 
-    deleteAll(): void {
-        this.setData(false);
-    }
-
     getCurrentUser(): EdUser {
         return this.get('profile') || false;
     }
@@ -53,5 +40,4 @@ export class StorageService {
     setCurrentUser(user: EdUser): void {
         this.set('profile', user);
     }
-
 }
