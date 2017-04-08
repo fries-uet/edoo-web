@@ -8,17 +8,17 @@ export class StorageService {
     constructor() {
     }
 
-    private getKeyStorage(key: string) {
+    private getKeyStorage(key: string): string {
         return this.namespace + ':' + key;
     }
 
-    public set(key: string, value: any) {
+    public set(key: string, value: any): void {
         let k = this.getKeyStorage(key);
 
         localStorage.setItem(k, JSON.stringify(value));
     }
 
-    public get(key: string, default_?: any) {
+    public get(key: string, default_?: any): any {
         let k = this.getKeyStorage(key);
 
         try {
