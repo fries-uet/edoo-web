@@ -22,7 +22,7 @@ import {AuthGuardService} from "./services/auth-guard.service";
         FormsModule,
         HttpModule,
         SharedModule,
-        AppRoutingModule
+        AppRoutingModule,
     ],
     providers: [
         StorageService,
