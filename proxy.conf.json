@@ -1,0 +1,9 @@
+{
+  "/api": {
+    "target": "https://edoo.vn/api",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
