@@ -22,9 +22,8 @@ export class ApiService {
 
     public requestAuth(args, silent: boolean = false) {
         let token = this.storageSrv.getToken();
-        let access_token = token.access_token || false;
         let headers = args.headers || {};
-        headers['Authorization'] = access_token;
+        headers['Authorization'] = token;
 
         args.headers = headers;
 
