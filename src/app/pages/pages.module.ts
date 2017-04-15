@@ -4,6 +4,8 @@ import {LoginComponent} from "./login/login.component";
 import {SharedModule} from "../shared/shared.module";
 import {PagesRoutingModule} from "./pages.routing";
 import {FormsModule} from "@angular/forms";
+import { WelcomeComponent } from './welcome/welcome.component';
+import { Page404Component } from './page-404/page-404.component';
 
 @NgModule({
     imports: [
@@ -13,7 +15,9 @@ import {FormsModule} from "@angular/forms";
         FormsModule
     ],
     declarations: [
-        LoginComponent
+        LoginComponent,
+        WelcomeComponent,
+        Page404Component
     ]
 })
 export class PagesModule {
