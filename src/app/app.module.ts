@@ -19,7 +19,7 @@ import {MainLayoutMasterComponent} from "./master/main-layout-master/main-layout
     declarations: [
         AppComponent,
         PagesLayoutMasterComponent,
-        MainLayoutMasterComponent,
+        MainLayoutMasterComponent
     ],
     imports: [
         BrowserModule,
@@ -27,7 +27,7 @@ import {MainLayoutMasterComponent} from "./master/main-layout-master/main-layout
         HttpModule,
         SharedModule,
         AppRoutingModule,
-        NgProgressModule,
+        NgProgressModule
     ],
     providers: [
         EventService,
