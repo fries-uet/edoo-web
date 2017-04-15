@@ -1,6 +1,6 @@
-<li class="nav-item dropdown" dropdown *ngIf="authSrv.isLoggedIn()">
+<li class="nav-item dropdown" dropdown *ngIf="isOpen">
     <a dropdownToggle class="nav-link dropdown-toggle">
-        Trần Minh Quý <span class="caret"></span>
+        {{user.name}} <span class="caret"></span>
     </a>
     <ul *dropdownMenu class="dropdown-menu" role="menu">
         <li role="menuitem"><a class="dropdown-item" href="#">Cập nhập thông tin</a></li>

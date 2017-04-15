@@ -39,6 +39,8 @@ export class AuthService {
 
     private updateStatus() {
         this.isLoggedIn_ = Boolean(this.storageSrv.get('token'));
+
+        this.eventSrv.emit('update_data');
     }
 
     private onLoginSuccess(data: any) {
