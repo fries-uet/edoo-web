@@ -1,3 +1,13 @@
-<p>
-  user-dropdown works!
-</p>
+<li class="nav-item dropdown" dropdown *ngIf="authSrv.isLoggedIn()">
+    <a dropdownToggle class="nav-link dropdown-toggle">
+        Trần Minh Quý <span class="caret"></span>
+    </a>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+        </li>
+    </ul>
+</li>

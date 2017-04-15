@@ -6,6 +6,8 @@ import {EventService} from "./event.service";
 
 @Injectable()
 export class AuthService {
+    public static isLoggedIn_ = false;
+
     public $invalidToken = new Subject<any>();
     public $login = new Subject<any>();
 
@@ -18,6 +20,7 @@ export class AuthService {
         this.onInvalidToken
             .subscribe(
                 () => {
+                    this.updateStatus();
                     this.reLogin();
                 }
             );
@@ -28,6 +31,12 @@ export class AuthService {
                     this.onLoginSuccess(data);
                 }
             );
+
+        this.updateStatus();
+    }
+
+    private updateStatus() {
+        AuthService.isLoggedIn_ = Boolean(this.storageSrv.get('token'));
     }
 
     private onLoginSuccess(data: any) {
@@ -41,9 +50,11 @@ export class AuthService {
 
         this.redirectTo(redirectUrl);
         this.storageSrv.set('returnUrl', false);
+
+        this.updateStatus();
     }
 
-    reLogin() {
+    private reLogin() {
         this.storageSrv.set('token', false);
         let returnUrl = this.router.url;
         this.storageSrv.set('returnUrl', returnUrl);
@@ -51,7 +62,7 @@ export class AuthService {
     }
 
     isLoggedIn() {
-        return Boolean(this.storageSrv.getToken() || false);
+        return AuthService.isLoggedIn_;
     }
 
     private redirectTo(url: string) {
