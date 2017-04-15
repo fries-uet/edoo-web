@@ -12,8 +12,8 @@ import {EdUser} from "../../definitions/ed-user";
     providers: [UserService]
 })
 export class UserDropdownComponent implements OnInit {
-    private isOpen: boolean = false;
-    private user: EdUser = null;
+    public isOpen: boolean = false;
+    public user: EdUser = null;
 
     constructor(private authSrv: AuthService,
                 private storageSrv: StorageService,
