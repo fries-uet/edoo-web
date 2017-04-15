@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app.routing";
-import {PagesLayoutMasterComponent} from "./pages/pages-layout-master/pages-layout-master.component";
+import {PagesLayoutMasterComponent} from "./master/pages-layout-master/pages-layout-master.component";
 import {SharedModule} from "./shared/shared.module";
 import {StorageService} from "./services/storage.service";
 import {ApiService} from "./services/api.service";
@@ -13,11 +13,13 @@ import {AuthService} from "./services/auth.service";
 import {AuthGuardService} from "./services/auth-guard.service";
 import {EventService} from "./services/event.service";
 import {NgProgressModule} from "ng2-progressbar";
+import {MainLayoutMasterComponent} from "./master/main-layout-master/main-layout-master.component";
 
 @NgModule({
     declarations: [
         AppComponent,
-        PagesLayoutMasterComponent
+        PagesLayoutMasterComponent,
+        MainLayoutMasterComponent,
     ],
     imports: [
         BrowserModule,
