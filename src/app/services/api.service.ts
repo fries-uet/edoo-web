@@ -13,7 +13,6 @@ export class ApiService {
     private BASE_URL = '';
 
     constructor(private http: Http,
-                private authSrv: AuthService,
                 private eventSrv: EventService,
                 private progressService: NgProgressService,
                 private storageSrv: StorageService) {
