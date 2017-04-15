@@ -5,6 +5,11 @@ import {EdUser} from "../definitions/ed-user";
 export class StorageService {
     private namespace = 'marketify_co';
 
+    private defaults = {
+        user: false,
+        token: false
+    };
+
     constructor() {
     }
 
@@ -43,5 +48,11 @@ export class StorageService {
 
     setCurrentUser(user: EdUser): void {
         this.set('user', user);
+    }
+
+    resetAll() {
+        for (let key in this.defaults) {
+            this.set(key, this.defaults[key]);
+        }
     }
 }
