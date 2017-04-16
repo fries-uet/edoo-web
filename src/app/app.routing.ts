@@ -1,14 +1,12 @@
 import {NgModule} from "@angular/core";
-import {Routes, RouterModule} from "@angular/router";
-import {PagesLayoutMasterComponent} from "./master/pages-layout-master/pages-layout-master.component";
-import {MainLayoutMasterComponent} from "./master/main-layout-master/main-layout-master.component";
+import {RouterModule, Routes} from "@angular/router";
 import {AuthGuardService} from "./services/auth-guard.service";
-import {SettingsLayoutMasterComponent} from "./master/settings-layout-master/settings-layout-master.component";
+import {LayoutMasterComponent} from "./layout-master/layout-master.component";
 
 export const routes: Routes = [
     {
         path: 'a',
-        component: MainLayoutMasterComponent,
+        component: LayoutMasterComponent,
         children: [
             {
                 path: '',
@@ -19,7 +17,7 @@ export const routes: Routes = [
     },
     {
         path: 'settings',
-        component: SettingsLayoutMasterComponent,
+        component: LayoutMasterComponent,
         children: [
             {
                 path: '',
@@ -30,7 +28,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        component: PagesLayoutMasterComponent,
+        component: LayoutMasterComponent,
         children: [
             {
                 path: '',
