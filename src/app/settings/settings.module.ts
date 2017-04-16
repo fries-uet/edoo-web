@@ -8,10 +8,12 @@ import {ChangePasswordComponent} from './change-password/change-password.compone
 import {FormsModule} from "@angular/forms";
 import {UserService} from "../services/user.service";
 import {ProfileResolverService} from "./edit-profile/profile-resolver.service";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
     imports: [
         CommonModule,
+        SharedModule,
         SettingsRoutingModule,
         FormsModule
     ],

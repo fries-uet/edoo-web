@@ -11,15 +11,15 @@ import {ActivatedRoute} from "@angular/router";
     providers: [UserService]
 })
 export class EditProfileComponent implements OnInit {
-    public user: any = null;
+    public user: EdUser = null;
 
-    private isEditDes = false;
-    private isEditFavorite = false;
+    public isEditDescription = false;
+    public isEditFavorite = false;
 
-    private isDisabled = false;
+    public isDisabled = false;
 
-    private description = '';
-    private favorite = '';
+    public description = '';
+    public favorite = '';
 
     constructor(private userSrv: UserService,
                 private route: ActivatedRoute,
@@ -37,14 +37,15 @@ export class EditProfileComponent implements OnInit {
             );
     }
 
-    updateFavorite() {
+    onUpdateDescription(value) {
         this.isDisabled = true;
 
-        this.userSrv.updateProfile(this.user)
+        this.userSrv
+            .updateProfile({
+                description: value
+            })
             .subscribe(
                 data => {
-                    this.closeEditFavorite();
-
                     this.isDisabled = false;
                 },
                 err => {
@@ -53,25 +54,20 @@ export class EditProfileComponent implements OnInit {
             )
     }
 
-    openEditFavorite() {
-        this.favorite = this.user['favorite'];
+    onUpdateFavorite(value) {
+        this.isDisabled = true;
 
-        this.closeEditDes();
-        this.isEditFavorite = true;
-    }
-
-    closeEditFavorite() {
-        this.isEditFavorite = false;
-    }
-
-    openEditDes() {
-        this.description = this.user['description'];
-
-        this.closeEditFavorite();
-        this.isEditDes = true;
-    }
-
-    closeEditDes() {
-        this.isEditDes = false;
+        this.userSrv
+            .updateProfile({
+                favorite: value
+            })
+            .subscribe(
+                data => {
+                    this.isDisabled = false;
+                },
+                err => {
+                    this.isDisabled = false;
+                }
+            )
     }
 }

@@ -79,7 +79,7 @@ export class UserService {
 
     public updateProfile(data: any): Observable<any> {
         let args = {
-            url: '/user/profile',
+            url: '/profile',
             method: 'POST',
             data
         };
@@ -87,11 +87,14 @@ export class UserService {
         return this.api.requestAuth(args);
     }
 
-    public changePassword(data: any): Observable<any> {
+    public changePassword(old_password: string, new_password: string): Observable<any> {
         let args = {
-            url: '/user/change-password',
+            url: '/changepass',
             method: 'POST',
-            data
+            data: {
+                old_password,
+                new_password
+            }
         };
 
         return this.api.requestAuth(args);

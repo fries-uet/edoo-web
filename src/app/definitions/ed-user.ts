@@ -10,4 +10,5 @@ export class EdUser {
     capability: string;
     description: string;
     favorite: string;
+    point_count: number;
 }

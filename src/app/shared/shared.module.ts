@@ -6,25 +6,31 @@ import {UserDropdownComponent} from './user-dropdown/user-dropdown.component';
 
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {CommonModule} from "@angular/common";
-import { ClassesDropdownComponent } from './classes-dropdown/classes-dropdown.component';
+import {ClassesDropdownComponent} from './classes-dropdown/classes-dropdown.component';
+import {ControlEditableComponent} from './control-editable/control-editable.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
+        FormsModule,
         BsDropdownModule.forRoot(),
     ],
     declarations: [
         FooterComponent,
         NavbarComponent,
         UserDropdownComponent,
-        ClassesDropdownComponent
+        ClassesDropdownComponent,
+        ControlEditableComponent
     ],
     exports: [
         FooterComponent,
         NavbarComponent,
-        UserDropdownComponent
+        UserDropdownComponent,
+        ClassesDropdownComponent,
+        ControlEditableComponent
     ]
 })
 export class SharedModule {
