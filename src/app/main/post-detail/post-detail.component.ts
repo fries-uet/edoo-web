@@ -16,8 +16,8 @@ export class PostDetailComponent implements OnInit {
     ngOnInit() {
         this.route.data
             .subscribe(
-                (data: { 0: EdPost }) => {
-                    this.post = data[0];
+                (response: { data: EdPost }) => {
+                    this.post = response.data;
                 }
             );
     }

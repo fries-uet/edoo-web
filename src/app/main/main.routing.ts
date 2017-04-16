@@ -15,12 +15,16 @@ export const routes: Routes = [
     {
         path: ':id',
         component: ClassDetailComponent,
-        resolve: [ClassDetailResolverService]
+        resolve: {
+            data: ClassDetailResolverService
+        }
     },
     {
         path: 'post/:id',
         component: PostDetailComponent,
-        resolve: [PostDetailResolverService]
+        resolve: {
+            data: PostDetailResolverService
+        }
     }
 ];
 

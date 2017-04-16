@@ -18,8 +18,8 @@ export class ClassDetailComponent implements OnInit {
     ngOnInit() {
         this.route.data
             .subscribe(
-                (data: { 0: EdClassDetail }) => {
-                    this.class_ = data[0];
+                (response: { data: EdClassDetail }) => {
+                    this.class_ = response.data;
 
                     console.log('class_detail');
                 }
