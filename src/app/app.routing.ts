@@ -23,7 +23,8 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                loadChildren: 'app/settings/settings.module#SettingsModule'
+                loadChildren: 'app/settings/settings.module#SettingsModule',
+                canLoad: [AuthGuardService]
             }
         ]
     },
@@ -33,7 +34,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                loadChildren: 'app/pages/pages.module#PagesModule'
+                loadChildren: 'app/pages/pages.module#PagesModule',
             }
         ]
     }
