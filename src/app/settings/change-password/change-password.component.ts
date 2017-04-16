@@ -26,12 +26,12 @@ export class ChangePasswordComponent implements OnInit {
         this.breadcrumbsSrv.setData([
             {
                 link: '/a',
-                text: 'Trang chu',
+                text: 'Trang chủ',
             },
             {
-                text: 'Doi mat khau'
+                text: 'Đổi mật khẩu'
             }
-        ])
+        ]);
     }
 
     public submit() {

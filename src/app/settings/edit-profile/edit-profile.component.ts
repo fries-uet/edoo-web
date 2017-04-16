@@ -3,6 +3,7 @@ import {UserService} from "../../services/user.service";
 import {EdUser} from "../../definitions/ed-user";
 import {Title} from "@angular/platform-browser";
 import {ActivatedRoute} from "@angular/router";
+import {BreadcrumbsService} from "../../services/breadcrumbs.service";
 
 @Component({
     selector: 'ed-edit-profile',
@@ -12,16 +13,10 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class EditProfileComponent implements OnInit {
     public user: EdUser = null;
-
-    public isEditDescription = false;
-    public isEditFavorite = false;
-
     public isDisabled = false;
 
-    public description = '';
-    public favorite = '';
-
     constructor(private userSrv: UserService,
+                private breadcrumbsSrv: BreadcrumbsService,
                 private route: ActivatedRoute,
                 private titleService: Title) {
     }
@@ -35,6 +30,16 @@ export class EditProfileComponent implements OnInit {
                     this.user = data.user;
                 }
             );
+
+        this.breadcrumbsSrv.setData([
+            {
+                link: '/a',
+                text: 'Trang chủ',
+            },
+            {
+                text: 'Tài khoản'
+            }
+        ])
     }
 
     onUpdateDescription(value) {
