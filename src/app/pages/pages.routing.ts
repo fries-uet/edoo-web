@@ -4,6 +4,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {WelcomeComponent} from "./welcome/welcome.component";
 import {Page404Component} from "./page-404/page-404.component";
+import {SupportComponent} from "./support/support.component";
 
 export const routes: Routes = [
     {
@@ -13,6 +14,10 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'support',
+        component: SupportComponent
     },
     {
         path: '**',

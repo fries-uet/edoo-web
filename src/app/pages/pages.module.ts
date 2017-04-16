@@ -6,6 +6,7 @@ import {PagesRoutingModule} from "./pages.routing";
 import {FormsModule} from "@angular/forms";
 import { WelcomeComponent } from './welcome/welcome.component';
 import { Page404Component } from './page-404/page-404.component';
+import { SupportComponent } from './support/support.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { Page404Component } from './page-404/page-404.component';
     declarations: [
         LoginComponent,
         WelcomeComponent,
-        Page404Component
+        Page404Component,
+        SupportComponent
     ]
 })
 export class PagesModule {
