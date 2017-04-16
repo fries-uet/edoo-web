@@ -68,7 +68,7 @@ export class UserService {
         return this.api.requestAuth(args);
     }
 
-    public profile(): Observable<any> {
+    public getProfile(): Observable<any> {
         let args = {
             url: '/profile',
             method: 'GET',

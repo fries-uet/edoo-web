@@ -3,6 +3,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {SettingsLayoutMasterComponent} from "./settings-layout-master/settings-layout-master.component";
 import {EditProfileComponent} from "./edit-profile/edit-profile.component";
 import {ChangePasswordComponent} from "./change-password/change-password.component";
+import {ProfileResolverService} from "./edit-profile/profile-resolver.service";
 
 
 export const routes: Routes = [
@@ -17,7 +18,10 @@ export const routes: Routes = [
             },
             {
                 path: 'profile',
-                component: EditProfileComponent
+                component: EditProfileComponent,
+                resolve: {
+                    user: ProfileResolverService
+                }
             },
             {
                 path: 'change-password',

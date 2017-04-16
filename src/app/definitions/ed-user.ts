@@ -8,4 +8,6 @@ export class EdUser {
     avatar: string;
     birthday: string;
     capability: string;
+    description: string;
+    favorite: string;
 }
