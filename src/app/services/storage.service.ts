@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {EdUser} from "../definitions/ed-user";
+import {EdClass} from "../definitions/ed-class";
 
 @Injectable()
 export class StorageService {
@@ -48,6 +49,14 @@ export class StorageService {
 
     setCurrentUser(user: EdUser): void {
         this.set('user', user);
+    }
+
+    getListClasses(): Array<EdClass> {
+        return this.get('classes');
+    }
+
+    setListClasses(classes: Array<EdClass>): void {
+        this.set('classes', classes);
     }
 
     resetAll() {

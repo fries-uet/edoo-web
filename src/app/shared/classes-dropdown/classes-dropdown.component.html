@@ -1,0 +1,15 @@
+<li class="nav-item dropdown" dropdown *ngIf="classes.length">
+    <a dropdownToggle class="nav-link dropdown-toggle">Lớp môn học <span class="caret"></span>
+    </a>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem">
+            <a class="dropdown-item" routerLink="/a">Tất cả các lớp</a>
+        </li>
+
+        <li class="divider dropdown-divider"></li>
+
+        <li role="menuitem" *ngFor="let class_ of classes">
+            <a class="dropdown-item" [routerLink]="['/a', class_.id]">{{class_.name}}</a>
+        </li>
+    </ul>
+</li>

@@ -6,6 +6,7 @@ import {UserDropdownComponent} from './user-dropdown/user-dropdown.component';
 
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {CommonModule} from "@angular/common";
+import { ClassesDropdownComponent } from './classes-dropdown/classes-dropdown.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {CommonModule} from "@angular/common";
     declarations: [
         FooterComponent,
         NavbarComponent,
-        UserDropdownComponent
+        UserDropdownComponent,
+        ClassesDropdownComponent
     ],
     exports: [
         FooterComponent,
