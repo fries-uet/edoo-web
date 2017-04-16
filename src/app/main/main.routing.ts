@@ -3,6 +3,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {ListClassesComponent} from "./list-classes/list-classes.component";
 import {ClassDetailComponent} from "./class-detail/class-detail.component";
 import {ClassDetailResolverService} from "./class-detail/class-detail-resolver.service";
+import {PostDetailComponent} from "./post-detail/post-detail.component";
 
 
 export const routes: Routes = [
@@ -14,6 +15,10 @@ export const routes: Routes = [
         path: ':id',
         component: ClassDetailComponent,
         resolve: [ClassDetailResolverService]
+    },
+    {
+        path: 'post/:id',
+        component: PostDetailComponent
     }
 ];
 

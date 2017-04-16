@@ -1,0 +1,45 @@
+<div class="post ng-fade" *ngFor="let post of posts" [ngClass]="post.is_seen ? 'seen': ''">
+    <div class="header">
+        <h2 class="title"><a [routerLink]="['/a/post/', post.id]"><span class="type {{post.type}}"></span>{{post.title}}</a>
+        </h2>
+    </div>
+
+    <div class="content">
+        {{post.description}}
+    </div>
+
+    <div class="group">
+        <div class="author" *ngIf="!post.is_incognito">
+            <img [src]="post.author.avatar" alt="">
+            <div class="author_name">
+                <span>Người đăng</span>
+                <span>{{post.author.name}}</span>
+            </div>
+        </div>
+        <div class="author" *ngIf="post.is_incognito">
+            <img [src]="'assets/images/incognito.png'" alt="">
+            <div class="author_name">
+                <span>Người đăng</span>
+                <span>Ẩn danh</span>
+            </div>
+        </div>
+        <div class="number_comments">
+            <span>Bình luận</span>
+            <span>{{post.comment_count}}</span>
+        </div>
+        <div class="time">
+            <span>Ngày đăng</span>
+            <span>{{post.created_at | date }}</span>
+        </div>
+        <div class="vote">
+            <span>Bình chọn</span>
+            <span>{{post.vote_count}}</span>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="read_more">
+        <a class="go-comment" *ngIf="!post.is_solve">Cùng tham gia trả lời và bình luận</a>
+        <a class="solved" *ngIf="post.is_solve">Chủ đề này đã được giải quyết</a>
+    </div>
+</div>
