@@ -31,6 +31,7 @@ export class AuthService {
                 () => {
                     this.storageSrv.resetAll();
                     this.updateStatus();
+                    this.router.navigate(['/']);
                 }
             );
 
@@ -47,7 +48,7 @@ export class AuthService {
         this.storageSrv.setCurrentUser(data.user);
         this.storageSrv.setToken(data.token);
 
-        let redirectUrl = '/';
+        let redirectUrl = '/a';
         if (this.storageSrv.get('returnUrl')) {
             redirectUrl = this.storageSrv.get('returnUrl');
         }
