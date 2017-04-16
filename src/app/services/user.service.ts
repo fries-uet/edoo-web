@@ -99,4 +99,24 @@ export class UserService {
 
         return this.api.requestAuth(args);
     }
+
+    public sendSupportRequest(email: string, type: string, content: string) {
+        let data = {
+            type: type,
+            content: content
+        };
+
+        if (email.length > 0) {
+            data['email'] = email;
+        }
+
+        let args = {
+            data: data,
+            method: 'POST',
+            url: '/sendsupport'
+        };
+
+        return this.api
+            .request(args);
+    }
 }
