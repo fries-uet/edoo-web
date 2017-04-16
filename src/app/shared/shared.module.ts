@@ -9,6 +9,7 @@ import {CommonModule} from "@angular/common";
 import {ClassesDropdownComponent} from './classes-dropdown/classes-dropdown.component';
 import {ControlEditableComponent} from './control-editable/control-editable.component';
 import {FormsModule} from "@angular/forms";
+import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
 
 
 @NgModule({
@@ -23,14 +24,16 @@ import {FormsModule} from "@angular/forms";
         NavbarComponent,
         UserDropdownComponent,
         ClassesDropdownComponent,
-        ControlEditableComponent
+        ControlEditableComponent,
+        BreadcrumbsComponent
     ],
     exports: [
         FooterComponent,
         NavbarComponent,
         UserDropdownComponent,
         ClassesDropdownComponent,
-        ControlEditableComponent
+        ControlEditableComponent,
+        BreadcrumbsComponent
     ]
 })
 export class SharedModule {

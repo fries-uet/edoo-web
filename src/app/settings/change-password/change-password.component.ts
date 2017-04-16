@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {StorageService} from "../../services/storage.service";
 import {Title} from "@angular/platform-browser";
+import {BreadcrumbsService} from "../../services/breadcrumbs.service";
 
 @Component({
     selector: 'ed-change-password',
@@ -16,11 +17,21 @@ export class ChangePasswordComponent implements OnInit {
 
     constructor(private userSrv: UserService,
                 private storageSrv: StorageService,
+                private breadcrumbsSrv: BreadcrumbsService,
                 private titleSrv: Title) {
     }
 
     ngOnInit() {
         this.titleSrv.setTitle('Thay đổi mật khẩu');
+        this.breadcrumbsSrv.setData([
+            {
+                link: '/a',
+                text: 'Trang chu',
+            },
+            {
+                text: 'Doi mat khau'
+            }
+        ])
     }
 
     public submit() {

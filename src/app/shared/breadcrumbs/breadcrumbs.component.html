@@ -1,0 +1,6 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item" *ngFor="let item of data" [class.active]="!item.link">
+        <a *ngIf="item.link" routerLink="{{item.link}}">{{item.text}}</a>
+        <span *ngIf="!item.link">{{item.text}}</span>
+    </li>
+</ol>
