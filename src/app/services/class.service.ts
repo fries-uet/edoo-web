@@ -17,6 +17,15 @@ export class ClassService {
         return this.apiSrv.requestAuth(args);
     }
 
+    public getClassDetail(class_id: string, page: number = 1): Observable<any> {
+        let args = {
+            method: 'GET',
+            url: '/posts/' + class_id + '/page/' + page
+        };
+
+        return this.apiSrv.requestAuth(args);
+    }
+
     public getPosts(class_id: string, page: number = 1): Observable<any> {
         let args = {
             method: 'GET',
