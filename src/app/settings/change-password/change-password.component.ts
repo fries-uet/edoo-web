@@ -39,7 +39,8 @@ export class ChangePasswordComponent implements OnInit {
         this.userSrv
             .changePassword(this.old_pass, this.new_pass)
             .subscribe(
-                data => {
+                response => {
+                    let data = response.data;
                     let token = data.token;
                     this.storageSrv.setToken(token);
                     this.reset_all();
