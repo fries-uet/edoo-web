@@ -6,8 +6,9 @@ import {ClassItemComponent} from './list-classes/class-item/class-item.component
 import {ClassDetailComponent} from './class-detail/class-detail.component';
 import {ClassDetailResolverService} from "./class-detail/class-detail-resolver.service";
 import {ClassService} from "../services/class.service";
-import { ListPostsComponent } from './list-posts/list-posts.component';
-import { PostDetailComponent } from './post-detail/post-detail.component';
+import {ListPostsComponent} from './list-posts/list-posts.component';
+import {PostDetailComponent} from './post-detail/post-detail.component';
+import {PostDetailResolverService} from "./post-detail/post-detail-resolver.service";
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     ],
     providers: [
         ClassService,
-        ClassDetailResolverService
+        ClassDetailResolverService,
+        PostDetailResolverService
     ]
 })
 export class MainModule {

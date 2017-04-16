@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {EdPost} from "../../definitions/ed-post";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'ed-post-detail',
@@ -6,11 +8,18 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
+    public post: EdPost;
 
-    constructor() {
+    constructor(private route: ActivatedRoute) {
     }
 
     ngOnInit() {
+        this.route.data
+            .subscribe(
+                (data: { 0: EdPost }) => {
+                    this.post = data[0];
+                }
+            );
     }
 
 }
