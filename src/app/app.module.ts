@@ -14,12 +14,14 @@ import {AuthGuardService} from "./services/auth-guard.service";
 import {EventService} from "./services/event.service";
 import {NgProgressModule} from "ng2-progressbar";
 import {MainLayoutMasterComponent} from "./master/main-layout-master/main-layout-master.component";
+import { SettingsLayoutMasterComponent } from './master/settings-layout-master/settings-layout-master.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         PagesLayoutMasterComponent,
-        MainLayoutMasterComponent
+        MainLayoutMasterComponent,
+        SettingsLayoutMasterComponent
     ],
     imports: [
         BrowserModule,

@@ -1,4 +1,7 @@
+//Custom bootstrap
 @import "bootstrap-custom/variables";
-@import "bootstrap-custom/typography";
-
+//Core Bootstrap 4
 @import "bootstrap/bootstrap";
+//Custom
+@import "custom/typography";
+@import "custom/main";
