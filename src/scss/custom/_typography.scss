@@ -1,5 +1,10 @@
 a {
     cursor: pointer;
+
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+        color: $brand-primary !important;
+    }
 }
 
 .ed-title {

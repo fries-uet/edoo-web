@@ -1,4 +1,4 @@
-<div class="post-item-wrapper mb-2 py-4" [class.seen]="post.is_seen">
+<div class="post-item-wrapper mb-2 py-4" [class.seen]="post.is_seen" [ngClass]="post.type">
     <h2 class="title">
         <a [routerLink]="['/a/post/', post.id]"><span class="type {{post.type}}"></span>{{post.title}}</a>
     </h2>
