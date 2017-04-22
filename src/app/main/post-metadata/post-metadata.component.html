@@ -1,6 +1,6 @@
 <div class="group">
     <div class="author ed-border-left" *ngIf="!post.is_incognito">
-        <img class="avatar mr-2" [src]="post.author.avatar" alt="">
+        <img class="avatar mr-2" [src]="post.author.avatar" *ngIf="post.author.avatar">
         <div class="name">
             <div>Người đăng</div>
             <div>{{post.author.name}}</div>
