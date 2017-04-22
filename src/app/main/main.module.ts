@@ -9,11 +9,13 @@ import {ClassService} from "../services/class.service";
 import {ListPostsComponent} from './list-posts/list-posts.component';
 import {PostDetailComponent} from './post-detail/post-detail.component';
 import {PostDetailResolverService} from "./post-detail/post-detail-resolver.service";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
     imports: [
         CommonModule,
-        MainRoutingModule
+        MainRoutingModule,
+        SharedModule
     ],
     declarations: [
         ListClassesComponent,
