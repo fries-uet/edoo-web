@@ -1,0 +1,15 @@
+.author,
+.comments,
+.time,
+.votes {
+    display: inline-block;
+    padding-left: 12px;
+    margin-right: 35px;
+    color: #333;
+    font-size: 12px;
+
+    > :first-child {
+        font-size: 10px;
+        color: #999;
+    }
+}

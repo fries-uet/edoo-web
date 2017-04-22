@@ -11,6 +11,8 @@ import {PostDetailComponent} from './post-detail/post-detail.component';
 import {PostDetailResolverService} from "./post-detail/post-detail-resolver.service";
 import {SharedModule} from "../shared/shared.module";
 import { ClassMetadataComponent } from './class-metadata/class-metadata.component';
+import { PostItemComponent } from './list-posts/post-item/post-item.component';
+import { PostMetadataComponent } from './post-metadata/post-metadata.component';
 
 @NgModule({
     imports: [
@@ -24,7 +26,9 @@ import { ClassMetadataComponent } from './class-metadata/class-metadata.componen
         ClassDetailComponent,
         ListPostsComponent,
         PostDetailComponent,
-        ClassMetadataComponent
+        ClassMetadataComponent,
+        PostItemComponent,
+        PostMetadataComponent
     ],
     providers: [
         ClassService,

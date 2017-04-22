@@ -1,0 +1,29 @@
+<div class="group">
+    <div class="author ed-border-left" *ngIf="!post.is_incognito">
+        <img [src]="post.author.avatar" alt="">
+        <div class="authordiv e">
+            <span>Người đăng</span>
+            <span>{{post.author.name}}</span>
+        </div>
+    </div>
+    <div class="author ed-border-left" *ngIf="post.is_incognito">
+        <img [src]="'assets/images/incognito.png'" alt="">
+        <div class="author_name">
+            <div>Người đăng</div>
+            <div>Ẩn danh</div>
+        </div>
+    </div>
+    <div class="comments ed-border-left">
+        <div>Bình luận</div>
+        <div>{{post.comment_count}}</div>
+    </div>
+    <div class="time ed-border-left">
+        <div>Ngày đăng</div>
+        <div>{{post.created_at | date }}</div>
+    </div>
+    <div class="votes ed-border-left">
+        <div>Bình chọn</div>
+        <div>{{post.vote_count}}</div>
+    </div>
+    <div class="clearfix"></div>
+</div>
