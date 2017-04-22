@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {EdPost} from "../../definitions/ed-post";
+import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {Title} from "@angular/platform-browser";
 import {BreadcrumbsService} from "../../services/breadcrumbs.service";
@@ -16,6 +15,10 @@ export class PostDetailComponent implements OnInit {
     constructor(private route: ActivatedRoute,
                 private breadcrumbsSrv: BreadcrumbsService,
                 private title: Title) {
+    }
+
+    onVote(value: number) {
+        console.log(value);
     }
 
     ngOnInit() {

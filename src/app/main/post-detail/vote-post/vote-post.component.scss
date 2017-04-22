@@ -1,0 +1,23 @@
+@import "../../../../scss/bootstrap-custom/variables";
+
+.vote {
+    text-align: center;
+
+    &.voteable {
+        .up, .down {
+            &:not(.active) {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .up, .down {
+        i {
+            font-size: 40px;
+        }
+
+        &.active {
+            color: $brand-primary;
+        }
+    }
+}

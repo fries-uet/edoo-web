@@ -45,7 +45,7 @@ export class AuthService {
     }
 
     private onLoginSuccess(data: any) {
-        this.storageSrv.setCurrentUser(data.user);
+        this.storageSrv.setCurrentUser(data.currentUser);
         this.storageSrv.setToken(data.token);
 
         let redirectUrl = '/a';

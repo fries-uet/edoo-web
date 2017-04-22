@@ -10,11 +10,14 @@ import {ListPostsComponent} from './list-posts/list-posts.component';
 import {PostDetailComponent} from './post-detail/post-detail.component';
 import {PostDetailResolverService} from "./post-detail/post-detail-resolver.service";
 import {SharedModule} from "../shared/shared.module";
-import { ClassMetadataComponent } from './class-metadata/class-metadata.component';
-import { PostItemComponent } from './list-posts/post-item/post-item.component';
-import { PostMetadataComponent } from './post-metadata/post-metadata.component';
-import { SidebarListClassesComponent } from './sidebar-list-classes/sidebar-list-classes.component';
-import { SidebarTopUsersComponent } from './sidebar-top-users/sidebar-top-users.component';
+import {ClassMetadataComponent} from './class-metadata/class-metadata.component';
+import {PostItemComponent} from './list-posts/post-item/post-item.component';
+import {PostMetadataComponent} from './post-metadata/post-metadata.component';
+import {SidebarListClassesComponent} from './sidebar-list-classes/sidebar-list-classes.component';
+import {SidebarTopUsersComponent} from './sidebar-top-users/sidebar-top-users.component';
+import {CommentComponent} from './comment/comment.component';
+import { VotePostComponent } from './post-detail/vote-post/vote-post.component';
+import { VoteCommentComponent } from './comment/vote-comment/vote-comment.component';
 
 @NgModule({
     imports: [
@@ -32,7 +35,10 @@ import { SidebarTopUsersComponent } from './sidebar-top-users/sidebar-top-users.
         PostItemComponent,
         PostMetadataComponent,
         SidebarListClassesComponent,
-        SidebarTopUsersComponent
+        SidebarTopUsersComponent,
+        CommentComponent,
+        VotePostComponent,
+        VoteCommentComponent
     ],
     providers: [
         ClassService,

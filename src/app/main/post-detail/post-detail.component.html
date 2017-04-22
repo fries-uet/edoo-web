@@ -1,12 +1,28 @@
 <div class="post-detail-wrapper" [ngClass]="post.type">
     <div class="ed-box">
-        <h1 class="title mb-3">{{post.title}}</h1>
+        <div class="main-content">
+            <div class="left">
+                <ed-vote-post [votes]="post.votes"
+                              (vote)="onVote($event)"
+                              [author]="post.author"
+                ></ed-vote-post>
+            </div>
 
-        <div class="content mb-2" [innerHtml]="post.content">
+            <div class="right">
+                <h1 class="title mb-3">{{post.title}}</h1>
+
+                <div class="content mb-2" [innerHtml]="post.content">
+                </div>
+
+                <div class="metadata mb-2">
+                    <ed-post-metadata [post]="post"></ed-post-metadata>
+                </div>
+            </div>
         </div>
 
-        <div class="metadata mb-2">
-            <ed-post-metadata [post]="post"></ed-post-metadata>
+
+        <div class="list-comments">
+            <ed-comment *ngFor="let comment of post.comments" [comment]="comment"></ed-comment>
         </div>
     </div>
 </div>
