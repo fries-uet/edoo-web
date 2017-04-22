@@ -1,13 +1,22 @@
-<ed-breadcrumbs></ed-breadcrumbs>
+<div class="class-detail-wrapper">
+    <ed-breadcrumbs></ed-breadcrumbs>
 
-<div class="row">
-    <div class="col-md-9">
-        {{class_.name}}
+    <div class="row">
+        <div class="col-md-9 main-content ed-box">
+            <div class="metadata mb-4">
+                <h1 class="ed-title">{{class_.name}}</h1>
+                <ed-class-metadata [class_]="class_"></ed-class-metadata>
 
-        <ed-list-posts [posts]="class_.posts"></ed-list-posts>
-    </div>
+                <button class="btn btn-primary ed-button create-topic">Tạo chủ đề</button>
+            </div>
 
-    <div class="col-md-3">
+            <div class="list-posts">
+                <ed-list-posts [posts]="class_.posts"></ed-list-posts>
+            </div>
+        </div>
 
+        <div class="col-md-3 sidebars">
+
+        </div>
     </div>
 </div>

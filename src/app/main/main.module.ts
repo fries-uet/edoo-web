@@ -10,6 +10,7 @@ import {ListPostsComponent} from './list-posts/list-posts.component';
 import {PostDetailComponent} from './post-detail/post-detail.component';
 import {PostDetailResolverService} from "./post-detail/post-detail-resolver.service";
 import {SharedModule} from "../shared/shared.module";
+import { ClassMetadataComponent } from './class-metadata/class-metadata.component';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import {SharedModule} from "../shared/shared.module";
         ClassItemComponent,
         ClassDetailComponent,
         ListPostsComponent,
-        PostDetailComponent
+        PostDetailComponent,
+        ClassMetadataComponent
     ],
     providers: [
         ClassService,

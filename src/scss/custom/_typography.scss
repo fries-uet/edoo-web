@@ -1,3 +1,17 @@
 a {
     cursor: pointer;
 }
+
+.ed-title {
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 50px;
+        height: 2px;
+        background-color: $brand-primary;
+        position: absolute;
+        left: 0;
+        bottom: -15px;
+    }
+}

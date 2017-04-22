@@ -1,0 +1,16 @@
+.ed-title {
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.metadata {
+    position: relative;
+
+    .create-topic {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

@@ -1,11 +1,5 @@
 <div class="group">
     <h2 class="name"><a [routerLink]="['/a', class_.id]">{{class_.name}} - {{class_.code}}</a></h2>
-    <div class="teacher ed-border-left">
-        <div>Giảng viên:</div>
-        <div class="number">{{class_.teacher_name}}</div>
-    </div>
-    <div class="students ed-border-left">
-        <div>Sinh viên:</div>
-        <div class="number">{{class_.student_count}}</div>
-    </div>
+
+    <ed-class-metadata [class_]="class_"></ed-class-metadata>
 </div>
