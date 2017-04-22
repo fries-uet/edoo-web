@@ -23,5 +23,9 @@
 
     .name {
         display: inline-block;
+
+        :last-child {
+            color: #333;
+        }
     }
 }
