@@ -1,6 +1,12 @@
-<div class="post-detail-wrapper">
-    <h1 class="title">{{post.title}}</h1>
+<div class="post-detail-wrapper" [ngClass]="post.type">
+    <div class="ed-box">
+        <h1 class="title mb-3">{{post.title}}</h1>
 
-    <div class="content" [innerHtml]="post.content">
+        <div class="content mb-2" [innerHtml]="post.content">
+        </div>
+
+        <div class="metadata mb-2">
+            <ed-post-metadata [post]="post"></ed-post-metadata>
+        </div>
     </div>
 </div>

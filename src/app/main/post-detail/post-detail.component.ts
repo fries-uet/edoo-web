@@ -3,6 +3,7 @@ import {EdPost} from "../../definitions/ed-post";
 import {ActivatedRoute} from "@angular/router";
 import {Title} from "@angular/platform-browser";
 import {BreadcrumbsService} from "../../services/breadcrumbs.service";
+import {EdPostDetail} from "../../definitions/ed-post-detail";
 
 @Component({
     selector: 'ed-post-detail',
@@ -10,7 +11,7 @@ import {BreadcrumbsService} from "../../services/breadcrumbs.service";
     styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
-    public post: EdPost;
+    public post: EdPostDetail;
 
     constructor(private route: ActivatedRoute,
                 private breadcrumbsSrv: BreadcrumbsService,
@@ -20,7 +21,7 @@ export class PostDetailComponent implements OnInit {
     ngOnInit() {
         this.route.data
             .subscribe(
-                (response: { data: EdPost }) => {
+                (response: { data: EdPostDetail }) => {
                     this.onFetchData(response.data);
                 }
             );
@@ -36,7 +37,11 @@ export class PostDetailComponent implements OnInit {
                 text: 'Trang chủ',
             },
             {
-                text: 'sss'
+                link: '/a/' + this.post.class.id,
+                text: this.post.class.name,
+            },
+            {
+                text: this.post.title
             }
         ]);
     }
