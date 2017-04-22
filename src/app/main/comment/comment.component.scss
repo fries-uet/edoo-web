@@ -1,0 +1,25 @@
+.main-content {
+    border-bottom: 1px solid #eee;
+
+    .left {
+        float: left;
+        width: 100px;
+    }
+
+    .right {
+        margin-left: 100px;
+    }
+
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+.metadata {
+    .name {
+        color: #999;
+        font-size: 12px;
+    }
+}

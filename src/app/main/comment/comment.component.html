@@ -1,3 +1,19 @@
-<div class="comment-wrapper">
-    <div class="content" [innerHtml]="comment.content"></div>
+<div class="comment-wrapper py-3">
+    <div class="main-content pb-3">
+        <div class="left">
+            <ed-vote-comment [votes]="comment.votes" [author]="comment.author"></ed-vote-comment>
+        </div>
+
+        <div class="right">
+            <div class="content mb-2" [innerHtml]="comment.content"></div>
+
+            <div class="metadata d-flex align-items-center">
+                <div class="avatar mr-2">
+                    <ed-user-avatar [src]="comment.author.avatar"></ed-user-avatar>
+                </div>
+
+                <div class="name">{{comment.author.name}}</div>
+            </div>
+        </div>
+    </div>
 </div>

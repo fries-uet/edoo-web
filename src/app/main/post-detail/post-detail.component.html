@@ -1,11 +1,11 @@
 <div class="post-detail-wrapper" [ngClass]="post.type">
     <div class="ed-box">
-        <div class="main-content">
+        <div class="main-content mb-2 pb-3">
             <div class="left">
                 <ed-vote-post [votes]="post.votes"
                               (vote)="onVote($event)"
-                              [author]="post.author"
-                ></ed-vote-post>
+                              [author]="post.author">
+                </ed-vote-post>
             </div>
 
             <div class="right">
@@ -20,9 +20,12 @@
             </div>
         </div>
 
-
         <div class="list-comments">
             <ed-comment *ngFor="let comment of post.comments" [comment]="comment"></ed-comment>
+        </div>
+
+        <div class="answer">
+            <ed-create-comment></ed-create-comment>
         </div>
     </div>
 </div>

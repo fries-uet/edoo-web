@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Title} from "@angular/platform-browser";
 import {BreadcrumbsService} from "../../services/breadcrumbs.service";
 import {EdPostDetail} from "../../definitions/ed-post-detail";
+import {PostService} from "../../services/post.service";
 
 @Component({
     selector: 'ed-post-detail',
@@ -14,11 +15,26 @@ export class PostDetailComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private breadcrumbsSrv: BreadcrumbsService,
+                private postSrv: PostService,
                 private title: Title) {
     }
 
     onVote(value: number) {
-        console.log(value);
+        this.postSrv.votePost(this.post.id, value)
+            .subscribe(
+                () => {
+                    this.fetchPost();
+                }
+            );
+    }
+
+    fetchPost() {
+        this.postSrv.getPost(this.post.id)
+            .subscribe(
+                response => {
+                    this.post = response.data;
+                }
+            );
     }
 
     ngOnInit() {

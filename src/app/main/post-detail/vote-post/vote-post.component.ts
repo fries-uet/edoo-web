@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, DoCheck, EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {EdVote} from "../../../definitions/ed-vote";
 import {StorageService} from "../../../services/storage.service";
 import {EdUser} from "../../../definitions/ed-user";
@@ -8,7 +8,7 @@ import {EdUser} from "../../../definitions/ed-user";
     templateUrl: './vote-post.component.html',
     styleUrls: ['./vote-post.component.scss']
 })
-export class VotePostComponent implements OnInit {
+export class VotePostComponent implements OnInit, DoCheck {
     @Input() public votes: Array<EdVote> = [];
     @Input() public author: EdUser;
     @Output() public vote: EventEmitter<any> = new EventEmitter();
@@ -21,10 +21,13 @@ export class VotePostComponent implements OnInit {
     constructor(private storageSrv: StorageService) {
     }
 
-    ngOnInit() {
-        this.currentUser = this.storageSrv.getCurrentUser();
+    ngDoCheck() {
         this.can_vote = this.currentUser.id != this.author.id;
         this.calculateResult();
+    }
+
+    ngOnInit() {
+        this.currentUser = this.storageSrv.getCurrentUser();
     }
 
     calculateResult() {

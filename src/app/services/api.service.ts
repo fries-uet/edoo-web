@@ -19,7 +19,7 @@ export class ApiService {
         this.BASE_URL = environment.api;
     }
 
-    public requestAuth(args, silent: boolean = false) {
+    public requestAuth(args, silent: boolean = false): Observable<any> {
         let token = this.storageSrv.getToken();
         let headers = args.headers || {};
         headers['Authorization'] = token;
