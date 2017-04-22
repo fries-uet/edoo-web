@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EdPost} from "../../definitions/ed-post";
 import {ActivatedRoute} from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'ed-post-detail',
@@ -10,16 +11,22 @@ import {ActivatedRoute} from "@angular/router";
 export class PostDetailComponent implements OnInit {
     public post: EdPost;
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute,
+                private title: Title) {
     }
 
     ngOnInit() {
         this.route.data
             .subscribe(
                 (response: { data: EdPost }) => {
-                    this.post = response.data;
+                    this.onFetchData(response.data);
                 }
             );
+    }
+
+    onFetchData(data) {
+        this.post = data;
+        this.title.setTitle(this.post.title);
     }
 
 }
