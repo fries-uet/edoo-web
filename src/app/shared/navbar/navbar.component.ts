@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
-import {EdClass} from "../../definitions/ed-class";
 
 @Component({
     selector: 'edoo-navbar',

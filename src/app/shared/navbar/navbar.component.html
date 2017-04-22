@@ -5,7 +5,7 @@
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" routerLink="/">
+        <a class="navbar-brand" routerLink="{{authSrv.isLoggedIn() ? '/a' : '/'}}">
             <img [src]="'assets/images/logo.png'" alt="Logo">
         </a>
 
