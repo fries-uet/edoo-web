@@ -1,0 +1,13 @@
+.ed-border-left {
+    position: relative;
+
+    &:before {
+        content: '';
+        height: 100%;
+        width: 2px;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        background-color: $brand-primary;
+    }
+}

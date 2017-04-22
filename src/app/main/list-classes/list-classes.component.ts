@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ClassService} from "../../services/class.service";
 import {EdClass} from "../../definitions/ed-class";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'ed-list-classes',
@@ -11,10 +12,12 @@ import {EdClass} from "../../definitions/ed-class";
 export class ListClassesComponent implements OnInit {
     public classes: Array<EdClass> = [];
 
-    constructor(private classSrv: ClassService) {
+    constructor(private classSrv: ClassService,
+                private title: Title) {
     }
 
     ngOnInit() {
+        this.title.setTitle('Tất cả các lớp môn học');
         this.fetchListClasses();
     }
 

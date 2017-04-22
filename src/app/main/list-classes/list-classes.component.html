@@ -1,9 +1,15 @@
-<div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8">
-        <ul class="list-group list-classes">
-            <li class="list-group-item" *ngFor="let class_ of classes">
-                <ed-class-item [class_]="class_"></ed-class-item>
-            </li>
-        </ul>
+<div class="list-classes-wrapper">
+    <div class="ed-box">
+        <h2 class="title">Danh Sách Lớp Môn Học</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <ul class="list-group">
+                    <li class="list-group-item class-item" *ngFor="let class_ of classes">
+                        <ed-class-item [class_]="class_"></ed-class-item>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
