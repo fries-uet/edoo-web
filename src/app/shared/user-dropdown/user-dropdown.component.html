@@ -1,5 +1,6 @@
 <li class="nav-item dropdown" dropdown *ngIf="isOpen">
     <a dropdownToggle class="nav-link dropdown-toggle">
+        <img class="avatar" [src]="user.avatar" [alt]="user.name" *ngIf="user.avatar">
         {{user.name}} <span class="caret"></span>
     </a>
     <ul *dropdownMenu class="dropdown-menu" role="menu">
