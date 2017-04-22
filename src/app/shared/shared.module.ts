@@ -10,6 +10,7 @@ import {ClassesDropdownComponent} from './classes-dropdown/classes-dropdown.comp
 import {ControlEditableComponent} from './control-editable/control-editable.component';
 import {FormsModule} from "@angular/forms";
 import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
+import {UserAvatarComponent} from './user-avatar/user-avatar.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
         UserDropdownComponent,
         ClassesDropdownComponent,
         ControlEditableComponent,
-        BreadcrumbsComponent
+        BreadcrumbsComponent,
+        UserAvatarComponent
     ],
     exports: [
         FooterComponent,
@@ -33,7 +35,8 @@ import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
         UserDropdownComponent,
         ClassesDropdownComponent,
         ControlEditableComponent,
-        BreadcrumbsComponent
+        BreadcrumbsComponent,
+        UserAvatarComponent
     ]
 })
 export class SharedModule {

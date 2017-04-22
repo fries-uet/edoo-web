@@ -13,6 +13,8 @@ import {SharedModule} from "../shared/shared.module";
 import { ClassMetadataComponent } from './class-metadata/class-metadata.component';
 import { PostItemComponent } from './list-posts/post-item/post-item.component';
 import { PostMetadataComponent } from './post-metadata/post-metadata.component';
+import { SidebarListClassesComponent } from './sidebar-list-classes/sidebar-list-classes.component';
+import { SidebarTopUsersComponent } from './sidebar-top-users/sidebar-top-users.component';
 
 @NgModule({
     imports: [
@@ -28,7 +30,9 @@ import { PostMetadataComponent } from './post-metadata/post-metadata.component';
         PostDetailComponent,
         ClassMetadataComponent,
         PostItemComponent,
-        PostMetadataComponent
+        PostMetadataComponent,
+        SidebarListClassesComponent,
+        SidebarTopUsersComponent
     ],
     providers: [
         ClassService,

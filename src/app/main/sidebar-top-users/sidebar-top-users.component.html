@@ -1,0 +1,16 @@
+<div class="sidebar-top-users-wrapper">
+    <div class="ed-box">
+        <h3 class="title-sidebar">Bảng xếp hạng</h3>
+        <ul class="list-sidebar">
+            <li>
+                <div class="user" *ngFor="let user of users">
+                    <ed-user-avatar [src]="user.avatar"></ed-user-avatar>
+                    <div class="comment_content">
+                        <span class="author">{{user.name}}</span> <span
+                            class="pull-right">{{user.point_count}} EP</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

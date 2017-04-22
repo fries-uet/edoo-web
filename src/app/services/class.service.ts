@@ -44,7 +44,7 @@ export class ClassService {
         return this.apiSrv.requestAuth(args);
     }
 
-    public getClassRank(class_id) {
+    public getTopUsers(class_id) {
         let args = {
             method: 'GET',
             url: '/classrank/' + class_id
