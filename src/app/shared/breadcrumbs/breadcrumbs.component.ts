@@ -1,6 +1,8 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {BreadcrumbsService} from "../../services/breadcrumbs.service";
 import {EventService} from "../../services/event.service";
+import {NavigationStart, Router} from "@angular/router";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
     selector: 'ed-breadcrumbs',
@@ -10,7 +12,8 @@ import {EventService} from "../../services/event.service";
 export class BreadcrumbsComponent implements OnInit, OnDestroy {
     @Input() public data: Array<any> = [];
 
-    constructor(private eventSrv: EventService) {
+    constructor(private eventSrv: EventService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -22,6 +25,19 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
             );
 
         this.eventSrv.register('update_breadcrumbs', sub);
+
+        this.router.events
+            .subscribe(
+                event => {
+                    if (event instanceof NavigationStart) {
+                        this.onReset();
+                    }
+                }
+            );
+    }
+
+    onReset() {
+        this.data = [];
     }
 
     ngOnDestroy() {

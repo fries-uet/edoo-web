@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EdPost} from "../../definitions/ed-post";
 import {ActivatedRoute} from "@angular/router";
 import {Title} from "@angular/platform-browser";
+import {BreadcrumbsService} from "../../services/breadcrumbs.service";
 
 @Component({
     selector: 'ed-post-detail',
@@ -12,6 +13,7 @@ export class PostDetailComponent implements OnInit {
     public post: EdPost;
 
     constructor(private route: ActivatedRoute,
+                private breadcrumbsSrv: BreadcrumbsService,
                 private title: Title) {
     }
 
@@ -27,6 +29,16 @@ export class PostDetailComponent implements OnInit {
     onFetchData(data) {
         this.post = data;
         this.title.setTitle(this.post.title);
+
+        this.breadcrumbsSrv.setData([
+            {
+                link: '/a',
+                text: 'Trang chủ',
+            },
+            {
+                text: 'sss'
+            }
+        ]);
     }
 
 }

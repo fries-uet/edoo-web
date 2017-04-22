@@ -8,10 +8,6 @@ export class BreadcrumbsService {
     constructor(private eventSrv: EventService) {
     }
 
-    getData() {
-        return this.data;
-    }
-
     setData(data: Array<any>) {
         this.data = data;
         this.parseData();

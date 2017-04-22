@@ -18,7 +18,7 @@ export class PostDetailResolverService implements Resolve<EdPost> {
                 (response) => {
                     return response.data;
                 }
-            )
+            );
     }
 
 }

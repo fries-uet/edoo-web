@@ -13,3 +13,15 @@
         color: #999;
     }
 }
+
+.author {
+    .avatar {
+        max-height: 30px;
+        width: auto;
+        border-radius: 50%;
+    }
+
+    .name {
+        display: inline-block;
+    }
+}
