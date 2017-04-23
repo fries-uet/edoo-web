@@ -10,8 +10,8 @@ import {EdUser} from "../../definitions/ed-user";
     providers: [ClassService]
 })
 export class SidebarTopUsersComponent implements OnInit {
-    private class_id: string;
-    private users: Array<EdUser> = [];
+    public class_id: string;
+    public users: Array<EdUser> = [];
 
     constructor(private classSrv: ClassService,
                 private route: ActivatedRoute) {
