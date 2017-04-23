@@ -1,5 +1,11 @@
 <div class="sidebar-list-classes-wrapper mb-3">
     <div class="ed-box">
-        sidebar-list-classes works!
+        <h3 class="title-sidebar mb-3">Lớp môn học</h3>
+
+        <ul class="classes">
+            <li class="mb-2" *ngFor="let class_ of listClasses" routerLinkActive="active">
+                <a [routerLink]="['/a', class_.id]" >{{class_.name}}</a>
+            </li>
+        </ul>
     </div>
 </div>

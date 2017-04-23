@@ -1,0 +1,26 @@
+@import "../../../scss/bootstrap-custom/variables";
+
+.classes {
+    padding: 0;
+
+    li {
+        list-style: none;
+
+        a {
+            color: #333;
+
+            &:before {
+                content: "\f0da";
+                font-family: FontAwesome;
+                margin-right: 8px;
+                font-size: 14px;
+            }
+        }
+
+        &.active {
+            a {
+                color: $brand-primary;
+            }
+        }
+    }
+}
