@@ -20,6 +20,7 @@ import {VotePostComponent} from "./post-detail/vote-post/vote-post.component";
 import {VoteCommentComponent} from "./comment/vote-comment/vote-comment.component";
 import {PostService} from "../services/post.service";
 import {CreateCommentComponent} from './create-comment/create-comment.component';
+import {CommentService} from "../services/comment.service";
 
 @NgModule({
     imports: [
@@ -46,6 +47,7 @@ import {CreateCommentComponent} from './create-comment/create-comment.component'
     providers: [
         ClassService,
         PostService,
+        CommentService,
         ClassDetailResolverService,
         PostDetailResolverService
     ]

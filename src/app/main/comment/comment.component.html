@@ -1,7 +1,9 @@
 <div class="comment-wrapper py-3">
     <div class="main-content pb-3">
         <div class="left">
-            <ed-vote-comment [votes]="comment.votes" [author]="comment.author"></ed-vote-comment>
+            <ed-vote-comment (vote)="onVote($event)"
+                             [votes]="comment.votes"
+                             [author]="comment.author"></ed-vote-comment>
         </div>
 
         <div class="right">

@@ -21,7 +21,10 @@
         </div>
 
         <div class="list-comments">
-            <ed-comment *ngFor="let comment of post.comments" [comment]="comment"></ed-comment>
+            <ed-comment
+                    (update)="onCommentUpdate()"
+                    *ngFor="let comment of post.comments"
+                    [comment]="comment"></ed-comment>
         </div>
 
         <div class="answer">

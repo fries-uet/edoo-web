@@ -28,6 +28,10 @@ export class PostDetailComponent implements OnInit {
             );
     }
 
+    onCommentUpdate() {
+        this.fetchPost();
+    }
+
     fetchPost() {
         this.postSrv.getPost(this.post.id)
             .subscribe(

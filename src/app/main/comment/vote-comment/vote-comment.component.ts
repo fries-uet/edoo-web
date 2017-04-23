@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, DoCheck, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {EdVote} from "../../../definitions/ed-vote";
 import {StorageService} from "../../../services/storage.service";
 import {EdUser} from "../../../definitions/ed-user";
@@ -8,7 +8,7 @@ import {EdUser} from "../../../definitions/ed-user";
     templateUrl: './vote-comment.component.html',
     styleUrls: ['./vote-comment.component.scss']
 })
-export class VoteCommentComponent implements OnInit {
+export class VoteCommentComponent implements OnInit, DoCheck {
     @Input() public votes: Array<EdVote> = [];
     @Input() public author: EdUser;
     @Output() public vote: EventEmitter<any> = new EventEmitter();
