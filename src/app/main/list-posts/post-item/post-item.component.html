@@ -1,6 +1,6 @@
 <div class="post-item-wrapper mb-2 py-4" [class.seen]="post.is_seen" [ngClass]="post.type">
     <h2 class="title">
-        <a [routerLink]="['/a/post/', post.id]"><span class="type {{post.type}}"></span>{{post.title}}</a>
+        <a [routerLink]="['/a/post/', post.id]">{{post.title}}</a>
     </h2>
 
     <div class="content mb-2">
@@ -12,7 +12,8 @@
     </div>
 
     <div class="read-more">
-        <a class="go-comment" *ngIf="!post.is_solve" [routerLink]="['/a/post/', post.id]">Cùng tham gia trả lời và bình luận</a>
+        <a class="go-comment" *ngIf="!post.is_solve" [routerLink]="['/a/post/', post.id]">Cùng tham gia trả lời và bình
+            luận</a>
         <a class="solved" *ngIf="post.is_solve" [routerLink]="['/a/post/', post.id]">Chủ đề này đã được giải quyết</a>
     </div>
 </div>
