@@ -49,7 +49,16 @@ export class VotePostComponent implements OnInit, DoCheck {
     }
 
     onClickVote(value: number) {
-        if (!this.can_vote || this.action == value) {
+        if (!this.can_vote) {
+            return;
+        }
+
+
+        if (this.action == value) {
+            return;
+        }
+
+        if (this.action == 0 && value == -1) {
             return;
         }
 
