@@ -1,7 +1,6 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from "@angular/core";
 import {StorageService} from "./storage.service";
 import {Router} from "@angular/router";
-import {Subject} from "rxjs";
 import {EventService} from "./event.service";
 
 @Injectable()

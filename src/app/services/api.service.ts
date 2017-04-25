@@ -1,6 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Http, Headers, Response} from "@angular/http";
-import {AuthService} from "./auth.service";
+import {Injectable} from "@angular/core";
+import {Headers, Http, Response} from "@angular/http";
 import {StorageService} from "./storage.service";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
