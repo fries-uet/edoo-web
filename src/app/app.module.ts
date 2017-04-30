@@ -39,4 +39,6 @@ import {BreadcrumbsService} from "./services/breadcrumbs.service";
     bootstrap: [AppComponent]
 })
 export class AppModule {
+    constructor() {
+    }
 }
