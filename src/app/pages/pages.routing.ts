@@ -5,23 +5,30 @@ import {LoginComponent} from "./login/login.component";
 import {WelcomeComponent} from "./welcome/welcome.component";
 import {Page404Component} from "./page-404/page-404.component";
 import {SupportComponent} from "./support/support.component";
+import {LayoutMasterComponent} from "../layout-master/layout-master.component";
 
 export const routes: Routes = [
     {
         path: '',
-        component: WelcomeComponent
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: 'support',
-        component: SupportComponent
-    },
-    {
-        path: '**',
-        component: Page404Component
+        component: LayoutMasterComponent,
+        children: [
+            {
+                path: '',
+                component: WelcomeComponent
+            },
+            {
+                path: 'login',
+                component: LoginComponent
+            },
+            {
+                path: 'support',
+                component: SupportComponent
+            },
+            {
+                path: '**',
+                component: Page404Component
+            }
+        ]
     }
 ];
 

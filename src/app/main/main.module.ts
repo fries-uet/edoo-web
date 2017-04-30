@@ -1,4 +1,4 @@
-import {ErrorHandler, NgModule} from "@angular/core";
+import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {MainRoutingModule} from "./main.routing";
 import {ListClassesComponent} from "./list-classes/list-classes.component";
@@ -19,9 +19,8 @@ import {CommentComponent} from "./comment/comment.component";
 import {VotePostComponent} from "./post-detail/vote-post/vote-post.component";
 import {VoteCommentComponent} from "./comment/vote-comment/vote-comment.component";
 import {PostService} from "../services/post.service";
-import {CreateCommentComponent} from './create-comment/create-comment.component';
+import {CreateCommentComponent} from "./create-comment/create-comment.component";
 import {CommentService} from "../services/comment.service";
-import * as Raven from 'raven-js';
 
 @NgModule({
     imports: [

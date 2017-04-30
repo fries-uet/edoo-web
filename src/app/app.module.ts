@@ -12,13 +12,11 @@ import {AuthService} from "./services/auth.service";
 import {AuthGuardService} from "./services/auth-guard.service";
 import {EventService} from "./services/event.service";
 import {NgProgressModule} from "ng2-progressbar";
-import {LayoutMasterComponent} from "./layout-master/layout-master.component";
 import {BreadcrumbsService} from "./services/breadcrumbs.service";
 
 @NgModule({
     declarations: [
-        AppComponent,
-        LayoutMasterComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,

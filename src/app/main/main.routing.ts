@@ -5,26 +5,33 @@ import {ClassDetailComponent} from "./class-detail/class-detail.component";
 import {ClassDetailResolverService} from "./class-detail/class-detail-resolver.service";
 import {PostDetailComponent} from "./post-detail/post-detail.component";
 import {PostDetailResolverService} from "./post-detail/post-detail-resolver.service";
+import {LayoutMasterComponent} from "../layout-master/layout-master.component";
 
 
 export const routes: Routes = [
     {
         path: '',
-        component: ListClassesComponent
-    },
-    {
-        path: ':id',
-        component: ClassDetailComponent,
-        resolve: {
-            data: ClassDetailResolverService
-        }
-    },
-    {
-        path: 'post/:id',
-        component: PostDetailComponent,
-        resolve: {
-            data: PostDetailResolverService
-        }
+        component: LayoutMasterComponent,
+        children: [
+            {
+                path: '',
+                component: ListClassesComponent
+            },
+            {
+                path: ':id',
+                component: ClassDetailComponent,
+                resolve: {
+                    data: ClassDetailResolverService
+                }
+            },
+            {
+                path: 'post/:id',
+                component: PostDetailComponent,
+                resolve: {
+                    data: PostDetailResolverService
+                }
+            }
+        ]
     }
 ];
 

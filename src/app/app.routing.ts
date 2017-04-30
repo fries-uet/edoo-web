@@ -1,40 +1,18 @@
 import {NgModule} from "@angular/core";
 import {PreloadAllModules, RouterModule, Routes} from "@angular/router";
-import {AuthGuardService} from "./services/auth-guard.service";
-import {LayoutMasterComponent} from "./layout-master/layout-master.component";
 
 export const routes: Routes = [
     {
         path: 'a',
-        component: LayoutMasterComponent,
-        children: [
-            {
-                path: '',
-                loadChildren: 'app/main/main.module#MainModule',
-                canLoad: [AuthGuardService]
-            }
-        ]
+        loadChildren: 'app/main/main.module#MainModule',
     },
     {
         path: 'settings',
-        component: LayoutMasterComponent,
-        children: [
-            {
-                path: '',
-                loadChildren: 'app/settings/settings.module#SettingsModule',
-                canLoad: [AuthGuardService]
-            }
-        ]
+        loadChildren: 'app/settings/settings.module#SettingsModule',
     },
     {
         path: '',
-        component: LayoutMasterComponent,
-        children: [
-            {
-                path: '',
-                loadChildren: 'app/pages/pages.module#PagesModule',
-            }
-        ]
+        loadChildren: 'app/pages/pages.module#PagesModule',
     }
 ];
 
